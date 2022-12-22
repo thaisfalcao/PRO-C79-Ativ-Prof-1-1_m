@@ -70,7 +70,7 @@ export default class TransactionScreen extends Component {
       .then(doc => {
         console.log(doc.data())
         var book = doc.data();
-        if (book.is_book_avaliable) {
+        if (book.is_book_available) {
           this.initiateBookIssue();
         } else {
           this.initiateBookReturn();
@@ -92,7 +92,7 @@ export default class TransactionScreen extends Component {
     db.collection("books")
       .doc(bookId)
       .update({
-        is_book_avaliable: false
+        is_book_available: false
       });
     //alterar o número de livros retirados pelo aluno
     db.collection("students")
